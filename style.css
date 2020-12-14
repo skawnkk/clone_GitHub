@@ -1,15 +1,15 @@
 /* INNER LEFT / RIGHT */
 .float--left {
     float: left;
-  }
-  .float--right {
+}
+.float--right {
     float: right;
-  }
-  .clearfix::after {
+}
+.clearfix::after {
     content: "";
     clear: both;
     display: block;
-  }
+}
 
 /* COMMON */
 .body__container{
@@ -110,7 +110,7 @@ header{
 header .inner{
     padding: 20px 0;
     display: flex;
-    height: 100%;
+    height: auto;
     /*! 흠냐 100% auto?*/
 }
 
@@ -127,22 +127,21 @@ header .inner{
     right:0;
 }
 
-header .logo a{
-    width: 30px;
-    height: 30px;
+header .logo a {
+    background: url("../img/logo.svg");
+    width: 32px;
+    height: 32px;
     display: block;
-    /* (a는 inline이기에 범위를 지정하며 block으로 변경해준다.) */
-    margin:0px;
-    background-image: url("/img/logo.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
+    text-indent: -9999px; /* 대체 텍스트 */
     cursor: pointer;
-    text-indent: -9999px;
 }
 
 header .logo a:hover{
-    background-image: url("/img/logo_on.svg");
-    background-repeat: no-repeat;
+    background-image: url("../img/logo_on.svg");
+}
+
+header .main-menu{
+    display: flex;
 }
 
 header .menu{
@@ -186,9 +185,23 @@ header .menu-item2:hover{
     display: none;
 }
 
-.toggle_btn{
+#toggle_btn{
+    display: none;
+    background-image: url('../img/toggle-btn.svg');
+    border:none;
+    box-sizing: border-box;
+    width: 18px;
+    height: 24px;
     text-indent: -9999px;
-    }
+    cursor: pointer;
+    position: absolute;
+    top:20px;
+    right:20px;
+    
+}
+
+
+
 
 /* MAIN */
 
@@ -447,19 +460,11 @@ footer a:hover{
     text-decoration: underline;
 }
 
-.noshow{
-    display: none;
-}
 
 @media screen and (max-width: 1024px){
-
-    .toggle{
-        display: none;   
-    }
-
     header .inner{
         max-width: none;
-        height: auto;
+        height: 100%;
         padding: 0 20px;
         display: block;
     }
@@ -470,35 +475,33 @@ footer a:hover{
         display: block;
     }
 
-    header .logo{
+    header .logo {
         padding: 12px 0;
     }
 
-    header .container__left .menu{
+    header .main-menu{
         display: block;
+        margin-top: 10px;
     }
 
-    header .container__left .menu li{
+    header .main-menu li{
         border-top: 1px solid lightgrey;
     }
 
-    header .container__left .menu a{
+    header .main-menu a{
         padding: 16px 0;
     }
 
     header .container__right{
-        position: relative;
-    }
-
+        padding: 10px 0 20px;
+    }    
     /* ? right의 display:flex일 경우 ->order 속성을 사용할 수도 있다. order: 0,1,2,*/
     
-    header .container__right .login{
-        display:flex;
-        flex-direction: column;
-        
+    header .login{
+        display: block;
     }
 
-    header .container__right .login .btn{
+    header .login .btn{
         margin-top: 10px;
     }
 
@@ -514,21 +517,17 @@ footer a:hover{
         justify-content: center;
         margin: 10px 0;
     }
-
-    .toggle_btn{
-        background-image: url('../img/toggle-btn.svg');
-        border:none;
-        box-sizing: border-box;
-        width: 18px;
-        height: 24px;
-        text-indent: -9999px;
-        cursor: pointer;
+/* 
+    header .toggle{
+        display: none;   
+    }
+    
+    header .toggle .on{
         display: block;
-        position: absolute;
-        top:20px;
-        right:20px;
-        }
+    }*/
 
-
-
-}   
+    #toggle_btn{
+        display: block;
+    } 
+}
+ 
