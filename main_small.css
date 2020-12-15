@@ -1,0 +1,65 @@
+.section--feature .summary__title{
+    margin-bottom: 30px;
+}
+
+.feature--img .inner{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.feature--box{
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+}
+
+.feature--box:last-child{
+    border-bottom: none;
+}
+
+/* map */
+#map{
+    width: auto;
+    /* 100%->inner의 100%에 해당되므로 초기화시킨다(auto). */
+    margin: 40px -20px 0 -20px;
+    border-left: none;
+    border-right: none;
+}
+
+/* pricing */
+.pricing__card{
+    display: block;
+}
+
+.pricing__button{
+    float: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer a{
+    margin-right: 10px;
+}
+
+.pricing__button{
+    padding: 10px 30px;
+}
+
+.pricing__button .btn{
+    font-weight: bold;
+    margin: 20px auto;
+}
+
+.pricing__summary{
+    border-top: 1px solid lightgrey;
+    border-left: none;
+}
+
+/* footer */
+footer .inner{
+    display: block;
+    text-align: center;
+}
+
+.footer_left{
+    margin-top:25px;
+}
